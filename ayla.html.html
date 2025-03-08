@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Blue Heart for ALYA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000; /* Dark background for neon effect */
+            margin: 0;
+            text-align: center;
+        }
+
+        .heart {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background-color: transparent;
+            transform: rotate(-45deg);
+            animation: heartbeat 1.5s infinite ease-in-out;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: #00bfff;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #00bfff;
+        }
+
+        .heart::before {
+            top: -60px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 60px;
+            top: 0;
+        }
+
+        .glow {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(0,191,255,0.8) 10%, rgba(0,191,255,0) 80%);
+            border-radius: 50%;
+            filter: blur(15px);
+            animation: glow-move 2s infinite alternate ease-in-out;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+                box-shadow: 0 0 30px #00bfff, 0 0 50px #00bfff, 0 0 80px #00bfff;
+            }
+            50% {
+                transform: scale(1.2) rotate(-45deg);
+                box-shadow: 0 0 50px #00bfff, 0 0 80px #00bfff, 0 0 100px #00bfff;
+            }
+        }
+
+        @keyframes glow-move {
+            0% {
+                transform: translate(-5px, -5px) scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(5px, 5px) scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        .message {
+            margin-top: 60px; /* Moves text further down */
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 36px;
+            color: #00bfff;
+            text-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff, 0 0 45px #00bfff;
+            animation: glow-text 1.5s infinite alternate ease-in-out;
+            letter-spacing: 2px;
+        }
+
+        @keyframes glow-text {
+            0% { opacity: 0.8; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart">
+        <div class="glow"></div>
+    </div>
+    <div class="message">This is for u ALYA</div>
+</body>
+</html>
